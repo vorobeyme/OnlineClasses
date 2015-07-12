@@ -1,3 +1,7 @@
+vorobeyme_jobeet:
+    resource: "@VorobeymeJobeetBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

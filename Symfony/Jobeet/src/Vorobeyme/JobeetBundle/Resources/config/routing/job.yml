@@ -1,0 +1,30 @@
+vorobeyme_job:
+    path:     /
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:index" }
+
+vorobeyme_job_show:
+    path:     /{id}/show
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:show" }
+
+vorobeyme_job_new:
+    path:     /new
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:new" }
+
+vorobeyme_job_create:
+    path:     /create
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:create" }
+    methods:  POST
+
+vorobeyme_job_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:edit" }
+
+vorobeyme_job_update:
+    path:     /{id}/update
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:update" }
+    methods:  [POST, PUT]
+
+vorobeyme_job_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "VorobeymeJobeetBundle:Job:delete" }
+    methods:  [POST, DELETE]
