@@ -3,5 +3,5 @@ vorobeyme_jobeet_job:
     prefix:   /job
 
 vorobeyme_jobeet_homepage:
-    path:     /{name}
+    path:     /hello/{name}
     defaults: { _controller: VorobeymeJobeetBundle:Default:index }
