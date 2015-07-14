@@ -3,7 +3,7 @@ vorobeyme_job:
     defaults: { _controller: "VorobeymeJobeetBundle:Job:index" }
 
 vorobeyme_job_show:
-    path:     /{id}/show
+    pattern:  /{company}/{location}/{id}/{position}
     defaults: { _controller: "VorobeymeJobeetBundle:Job:show" }
 
 vorobeyme_job_new:
