@@ -1,2 +1,4 @@
 ### Jobeet
 - Starting up the Project
+- The Data model
+- The Controller and the View
