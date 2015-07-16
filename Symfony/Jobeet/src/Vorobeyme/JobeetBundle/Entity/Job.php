@@ -506,4 +506,12 @@ class Job
     {
         return Jobeet::slugify($this->getLocation());
     }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setExpiresAtValue()
+    {
+        // Add your code here
+    }
 }
