@@ -6,7 +6,7 @@ vorobeyme_job_show:
     pattern:  /{company}/{location}/{id}/{position}
     defaults: { _controller: "VorobeymeJobeetBundle:Job:show" }
     requirements:
-        \id: d+ # Each pattern variable can be validated by a regular expression
+        #id: \d+ # Each pattern variable can be validated by a regular expression
 
 vorobeyme_job_new:
     path:     /new
