@@ -26,8 +26,8 @@ class JobController extends Controller
         //$entities = $em->getRepository('VorobeymeJobeetBundle:Job')->findAll();
 
         $query = $em->createQuery(
-            'SELECT j FROM VorobeyJobeetBundle:Job j WHERE j.created_at > :date'
-        )->setParameter('date', date('Y-m-d H:i:s', time() - 86400 * 30));
+            'SELECT j FROM VorobeyJobeetBundle:Job j WHERE j.expires_at > :date'
+        )->setParameter('date', date('Y-m-d H:i:s', time()));
         $entities = $query->getResult();
 
         return $this->render('VorobeymeJobeetBundle:Job:index.html.twig', array(
