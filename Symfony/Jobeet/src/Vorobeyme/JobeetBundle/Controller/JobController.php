@@ -26,7 +26,7 @@ class JobController extends Controller
         $categories = $em->getRepository('VorobeymeJobeetBundle:Category')->getWithJobs();
 
         foreach ($categories as $category) {
-            $category->setActiveJobs($em->getRepository('VorobeymeJobeetBundle:Job')->getActiveJobs($category->getId()));
+            $category->setActiveJobs($em->getRepository('VorobeymeJobeetBundle:Job')->getActiveJobs($category->getId(), 10));
         }
 
         return $this->render('VorobeymeJobeetBundle:Job:index.html.twig', array(
