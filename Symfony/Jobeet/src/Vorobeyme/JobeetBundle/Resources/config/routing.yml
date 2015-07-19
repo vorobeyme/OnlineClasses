@@ -2,6 +2,10 @@ vorobeyme_jobeet_job:
     resource: "@VorobeymeJobeetBundle/Resources/config/routing/job.yml"
     prefix:   /job
 
+vorobeyme_jobeet_category:
+    path: 	  "/category/{slug}"
+    defaults: { _controller: VorobeymeJobeetBundle:Category:show }
+
 vorobeyme_jobeet_homepage:
     path:  /
     defaults: { _controller: VorobeymeJobeetBundle:Job:index }

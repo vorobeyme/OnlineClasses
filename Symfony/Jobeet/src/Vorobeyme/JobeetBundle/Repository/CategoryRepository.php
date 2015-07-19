@@ -3,6 +3,7 @@
 namespace Vorobeyme\JobeetBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Vorobeyme\JobeetBundle\Utils\Jobeet as Jobeet;
 
 /**
  * CategoryRepository
@@ -20,5 +21,10 @@ class CategoryRepository extends EntityRepository
         )->setParameter('date', date('Y-m-d H:i:s', time()));
  
         return $query->getResult();
+    }
+
+    public function getSlug()
+    {
+    	return Jobeet::slugify($this->getName());
     }
 }
