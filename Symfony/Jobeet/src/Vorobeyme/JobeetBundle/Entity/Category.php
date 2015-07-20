@@ -29,7 +29,7 @@ class Category
      */
     private $affiliates;
 
-    private $active_jobs;
+    private $activeJobs;
 
     private $moreJobs;
 
@@ -148,12 +148,12 @@ class Category
 
     public function setActiveJobs($jobs)
     {
-        $this->active_jobs = $jobs;
+        $this->activeJobs = $jobs;
     }
  
     public function getActiveJobs()
     {
-        return $this->active_jobs;
+        return $this->activeJobs;
     }
 
     public function getSlug()
