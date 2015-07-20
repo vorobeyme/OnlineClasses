@@ -153,4 +153,9 @@ class Category
     {
         return $this->active_jobs;
     }
+
+    public function getSlug()
+    {
+        return Jobeet::slugify($this->getName());
+    }
 }
