@@ -3,6 +3,7 @@
 namespace Vorobeyme\JobeetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Vorobeyme\JobeetBundle\Utils\Jobeet;
 
 /**
  * Category
