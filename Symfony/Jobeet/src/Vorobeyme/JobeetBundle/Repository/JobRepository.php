@@ -12,6 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class JobRepository extends EntityRepository
 {
+	/**
+	 * @param null|int $categoryId
+	 * @param null|int $max
+	 *
+	 * @return array
+	 */
 	public function getActiveJobs($categoryId = null, $max = null)
 	{
 		$qb = $this->createQueryBuilder('j')
@@ -33,6 +39,11 @@ class JobRepository extends EntityRepository
 		return $query->getResult();
 	}
 
+	/**
+	 * @param int $id
+	 *
+	 * @return array|null
+	 */
 	public function getActiveJob($id)
 	{
 		$query = $this->createQueryBuilder('j')
@@ -52,6 +63,11 @@ class JobRepository extends EntityRepository
 		return $job;
 	}
 
+	/**
+	 * @param null|int $categoryId
+	 *
+	 * @return int
+	 */
 	public function countActiveJobs($categoryId = null)
 	{
 		$qb = $this->createQueryBuilder('j')
