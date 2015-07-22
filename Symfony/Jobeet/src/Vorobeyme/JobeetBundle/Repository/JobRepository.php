@@ -66,6 +66,6 @@ class JobRepository extends EntityRepository
 
 		$query = $qb->getQuery();
 
-		return $query->getSingleResult();
+		return $query->getSingleScalarResult();
 	}
 }
