@@ -26,10 +26,23 @@ class CategoryController extends Controller
 			throw $this->createNotFoundException('Unable to find Category entity.');
 		}
 
-		$category->setActiveJobs($em->getRepository('VorobeymeJobeetBundle:Job')->getActiveJobs($category->getId()));
+		// Pagination
+		$totalJobs = $em->getRepository('VorobeymeJobeetBundle:Job')->countActiveJobs($category->getId());
+	    $jobsPerPage = $this->container->getParameter('max_jobs_on_category');
+	    $lastPage = ceil($totalJobs / $jobsPerPage);
+	    $prevPage = $page > 1 ? $page - 1 : 1;
+	    $nextPage = $page < $lastPage ? $page + 1 : $lastPage;
+	    $offset = ($page - 1) * $jobsPerPage;
+
+		$category->setActiveJobs($em->getRepository('VorobeymeJobeetBundle:Job')->getActiveJobs($category->getId(), $jobsPerPage, $offset));
 
 		return $this->render('VorobeymeJobeetBundle:Category:show.html.twig', array(
 			'category' => $category,
+	        'last_page' => $lastPage,
+	        'prev_page' => $prevPage,
+	        'current_page' => $page,
+	        'next_page' => $nextPage,
+	        'total_jobs' => $totalJobs
 		));
 	}
 }
