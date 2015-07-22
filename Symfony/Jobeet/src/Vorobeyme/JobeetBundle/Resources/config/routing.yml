@@ -3,8 +3,8 @@ vorobeyme_jobeet_job:
     prefix:   /job
 
 vorobeyme_jobeet_category:
-    path: 	  "/category/{slug}"
-    defaults: { _controller: VorobeymeJobeetBundle:Category:show }
+    path: 	  "/category/{slug}/{page}"
+    defaults: { _controller: VorobeymeJobeetBundle:Category:show, page: 1 }
 
 vorobeyme_jobeet_homepage:
     path:  /

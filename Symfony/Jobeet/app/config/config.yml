@@ -8,6 +8,7 @@ imports:
 parameters:
     locale: en
     max_jobs_on_homepage: 5
+    max_jobs_on_category: 10
 
 framework:
     #esi:             ~
