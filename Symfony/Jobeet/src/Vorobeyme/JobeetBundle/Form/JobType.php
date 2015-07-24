@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use Vorobeyme\JobeetBundle\Entity\Job;
+
 class JobType extends AbstractType
 {
     /**
@@ -15,22 +17,18 @@ class JobType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type')
+            ->add('type', 'choice', ['choices' => Job::getTypes(), 'expanded' => true])
+            ->add('category')
             ->add('company')
-            ->add('logo')
+            ->add('logo', null, ['label' => 'Company logo'])
             ->add('url')
             ->add('position')
             ->add('location')
             ->add('description')
-            ->add('how_to_apply')
+            ->add('how_to_apply', null, ['label' => 'How to apply?'])
             ->add('token')
-            ->add('is_public')
-            ->add('is_activated')
+            ->add('is_public', null, ['label' => 'Public?'])
             ->add('email')
-            ->add('expires_at')
-            ->add('created_at')
-            ->add('updated_at')
-            ->add('category')
         ;
     }
     
