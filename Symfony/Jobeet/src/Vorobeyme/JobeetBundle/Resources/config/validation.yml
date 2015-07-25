@@ -1,0 +1,24 @@
+Vorobeyme\JobeetBundle\Entity\Job:
+	properties:
+		category:
+            - NotBlank: ~
+		type:
+			- NotBlank: ~
+			- Choice: { callback: getTypevalues }
+        company:
+            - NotBlank: ~
+        position:
+            - NotBlank: ~
+        location:
+            - NotBlank: ~
+        description:
+            - NotBlank: ~
+        how_to_apply:
+            - NotBlank: ~
+        token:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        url:
+            - Url: ~
